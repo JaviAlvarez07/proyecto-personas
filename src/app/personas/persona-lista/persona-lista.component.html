@@ -1,1 +1,23 @@
-<p>persona-lista works!</p>
+<div class="container">
+    <h1>PERSONAS</h1>
+    <table class="table table-success table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Detalles</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let usuario of usuarios">
+            <th scope="row">{{usuario.id}}</th>
+            <td>{{usuario.nombre}}</td>
+            <td>{{usuario.apellido}}</td>
+            <td><a href="#" class="btn btn-dark" [routerLink]="['/persona', usuario.id]">Ver</a>
+            </td>
+        </tr>
+        
+        </tbody>
+    </table>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-persona-lista',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonaListaComponent implements OnInit {
 
-  constructor() { }
+
+  
+
+  public usuarios: any=[];
+
+  constructor( private dataSvc:DataService) { }
 
   ngOnInit(): void {
+    this.usuarios = this.dataSvc.getPersonas();
   }
 
 }
